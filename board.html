@@ -6,14 +6,19 @@
 
   <title>Board | VODA</title>
 
+  <!-- 모든 방문자 페이지에서 사용하는 공통 스타일 -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- 공통 메뉴·푸터 및 게시판 기능 -->
   <script src="script.js" defer></script>
 </head>
 
 <body class="board-page">
+  <!-- 공통 메뉴는 script.js에서 채웁니다. -->
   <header id="site-header" class="site-header"></header>
 
   <main>
+    <!-- 페이지 제목을 표시하는 얇은 상단 배너 -->
     <section class="board-banner">
       <div class="wrap">
         <h1>Board</h1>
@@ -21,132 +26,137 @@
     </section>
 
     <div class="wrap board-content">
+      <!--
+        1. 게시글 목록 화면
 
-      <!-- 게시글 목록 화면 -->
-      <section id="voda-board-list">
+        관리자 페이지에서 저장한 게시글을 script.js가 표시합니다.
+        아래의 id와 data-board-category는 JavaScript 연결에 사용하므로
+        이름을 바꾸려면 script.js도 함께 수정해야 합니다.
+      -->
+      <section id="voda-board-list" aria-label="게시글 목록">
 
-        <!-- 고정 공지: JS에서 표시 -->
-        <div class="board-pinned" id="voda-board-pinned"></div>
+        <!-- 상단 고정 공지를 표시하는 영역 -->
+        <div
+          id="voda-board-pinned"
+          class="board-pinned"
+        ></div>
 
+        <!-- 게시글 분류 버튼과 제목 검색 -->
         <div class="board-toolbar">
-          <div class="board-filters" aria-label="게시글 분류">
-            <button type="button" class="active"
-              data-board-category="all" aria-pressed="true">
+          <!-- aria-pressed는 현재 선택한 분류를 나타냅니다. -->
+          <div
+            class="board-filters"
+            role="group"
+            aria-label="게시글 분류"
+          >
+            <button
+              type="button"
+              class="active"
+              data-board-category="all"
+              aria-pressed="true"
+            >
               전체
             </button>
 
-            <button type="button"
-              data-board-category="notice" aria-pressed="false">
+            <button
+              type="button"
+              data-board-category="notice"
+              aria-pressed="false"
+            >
               공지
             </button>
 
-            <button type="button"
-              data-board-category="activity" aria-pressed="false">
+            <button
+              type="button"
+              data-board-category="activity"
+              aria-pressed="false"
+            >
               활동
             </button>
 
-            <button type="button"
-              data-board-category="recruit" aria-pressed="false">
+            <button
+              type="button"
+              data-board-category="recruit"
+              aria-pressed="false"
+            >
               모집
             </button>
           </div>
 
-          <form id="voda-board-search" class="board-search">
+          <!-- 검색 버튼이나 Enter 키로 제목을 검색합니다. -->
+          <form
+            id="voda-board-search"
+            class="board-search"
+            role="search"
+            aria-label="게시글 검색"
+          >
             <input
               type="search"
               name="keyword"
               placeholder="제목 검색"
               aria-label="게시글 제목 검색"
             >
-            <button type="submit" class="board-button">검색</button>
+
+            <button type="submit" class="board-button">
+              검색
+            </button>
           </form>
         </div>
 
-        <ul id="voda-board-posts" class="board-posts"></ul>
+        <!--
+          게시글 목록은 script.js가 생성합니다.
+          실제 게시글을 이 HTML 안에 직접 작성할 필요는 없습니다.
+        -->
+        <ul
+          id="voda-board-posts"
+          class="board-posts"
+        ></ul>
 
+        <!-- 게시글 수에 따라 페이지 이동 버튼이 생성됩니다. -->
         <div class="board-bottom">
           <nav
             id="voda-board-pagination"
             class="board-pagination"
-            aria-label="게시글 페이지"
+            aria-label="게시글 페이지 이동"
           ></nav>
-
-          <button
-            type="button"
-            id="voda-board-write"
-            class="board-button"
-          >
-            글쓰기
-          </button>
         </div>
       </section>
 
-      <!-- 게시글 상세 화면 -->
-      <section id="voda-board-detail" hidden>
-        <button type="button" id="voda-board-back" class="board-back">
+      <!--
+        2. 게시글 상세 화면
+
+        처음에는 hidden으로 숨겨져 있습니다.
+        게시글을 선택하면 script.js가 목록을 숨기고
+        이 영역에 제목·분류·날짜·내용을 표시합니다.
+      -->
+      <section
+        id="voda-board-detail"
+        aria-label="게시글 상세"
+        hidden
+      >
+        <button
+          type="button"
+          id="voda-board-back"
+          class="board-back"
+        >
           ← 목록으로
         </button>
 
         <article class="board-detail">
+          <!-- 게시글 분류와 작성 날짜 -->
           <p class="board-detail-meta"></p>
+
+          <!-- 게시글 제목 -->
           <h2></h2>
+
+          <!-- 게시글 본문 -->
           <div class="board-detail-body"></div>
         </article>
       </section>
-
     </div>
   </main>
 
-  <!-- 글쓰기 창 -->
-  <dialog id="voda-board-dialog" class="board-dialog">
-    <form id="voda-board-form">
-      <div class="board-dialog-heading">
-        <h2>글쓰기</h2>
-        <button
-          type="button"
-          id="voda-board-close"
-          class="board-close"
-          aria-label="글쓰기 창 닫기"
-        >×</button>
-      </div>
-
-      <label class="board-field">
-        분류
-        <select name="category">
-          <option value="notice">공지</option>
-          <option value="activity">활동</option>
-          <option value="recruit">모집</option>
-        </select>
-      </label>
-
-      <label class="board-field">
-        제목
-        <input
-          type="text"
-          name="title"
-          maxlength="120"
-          required
-        >
-      </label>
-
-      <label class="board-field">
-        내용
-        <textarea name="content" rows="8" required></textarea>
-      </label>
-
-      <label class="board-pin-check">
-        <input type="checkbox" name="pinned">
-        상단 고정 공지로 표시
-      </label>
-
-      <p class="board-save-error" id="voda-board-error" role="alert"></p>
-
-      <div class="board-form-actions">
-        <button type="submit" class="board-button">등록</button>
-      </div>
-    </form>
-  </dialog>
-
+  <!-- 공통 푸터는 script.js에서 채웁니다. -->
   <footer id="site-footer" class="site-footer"></footer>
 </body>
 </html>

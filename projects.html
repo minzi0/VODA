@@ -8,6 +8,7 @@
 
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
+  <script src="content.js" defer></script>
 </head>
 
 <body class="projects-page">
@@ -47,136 +48,8 @@
         data-project-panel="list"
         aria-label="프로젝트 목록"
       >
-        <div class="projects-grid">
-
-          <!-- 첫 번째 프로젝트 -->
-          <article class="project-entry">
-            <div class="project-entry-copy">
-              <span class="project-category">
-                <!-- 실제 분류를 입력하세요. -->
-                분류
-              </span>
-
-              <h2>
-                <!-- 실제 프로젝트 제목을 입력하세요. -->
-                프로젝트 제목
-              </h2>
-
-              <p>
-                <!-- 실제 프로젝트 설명을 입력하세요. -->
-                프로젝트 설명이 들어갈 자리입니다.
-              </p>
-            </div>
-
-            <div class="project-entry-image">
-              <span>이미지가 들어갈 자리</span>
-
-              <!-- 사진을 넣을 때 위 span을 지우고
-                   아래 img의 주석을 해제하세요. -->
-              <!--
-              <img
-                src="images/project-01.png"
-                alt="첫 번째 프로젝트 화면 설명"
-              >
-              -->
-            </div>
-          </article>
-
-          <!-- 두 번째 프로젝트 -->
-          <article class="project-entry">
-            <div class="project-entry-copy">
-              <span class="project-category">
-                <!-- 실제 분류를 입력하세요. -->
-                분류
-              </span>
-
-              <h2>
-                <!-- 실제 프로젝트 제목을 입력하세요. -->
-                프로젝트 제목
-              </h2>
-
-              <p>
-                <!-- 실제 프로젝트 설명을 입력하세요. -->
-                프로젝트 설명이 들어갈 자리입니다.
-              </p>
-            </div>
-
-            <div class="project-entry-image">
-              <span>이미지가 들어갈 자리</span>
-
-              <!--
-              <img
-                src="images/project-02.png"
-                alt="두 번째 프로젝트 화면 설명"
-              >
-              -->
-            </div>
-          </article>
-
-          <!-- 세 번째 프로젝트 -->
-          <article class="project-entry">
-            <div class="project-entry-copy">
-              <span class="project-category">
-                <!-- 실제 분류를 입력하세요. -->
-                분류
-              </span>
-
-              <h2>
-                <!-- 실제 프로젝트 제목을 입력하세요. -->
-                프로젝트 제목
-              </h2>
-
-              <p>
-                <!-- 실제 프로젝트 설명을 입력하세요. -->
-                프로젝트 설명이 들어갈 자리입니다.
-              </p>
-            </div>
-
-            <div class="project-entry-image">
-              <span>이미지가 들어갈 자리</span>
-
-              <!--
-              <img
-                src="images/project-03.png"
-                alt="세 번째 프로젝트 화면 설명"
-              >
-              -->
-            </div>
-          </article>
-
-          <!-- 네 번째 프로젝트 -->
-          <article class="project-entry">
-            <div class="project-entry-copy">
-              <span class="project-category">
-                <!-- 실제 분류를 입력하세요. -->
-                분류
-              </span>
-
-              <h2>
-                <!-- 실제 프로젝트 제목을 입력하세요. -->
-                프로젝트 제목
-              </h2>
-
-              <p>
-                <!-- 실제 프로젝트 설명을 입력하세요. -->
-                프로젝트 설명이 들어갈 자리입니다.
-              </p>
-            </div>
-
-            <div class="project-entry-image">
-              <span>이미지가 들어갈 자리</span>
-
-              <!--
-              <img
-                src="images/project-04.png"
-                alt="네 번째 프로젝트 화면 설명"
-              >
-              -->
-            </div>
-          </article>
-
-        </div>
-      </section>
+        <div class="projects-grid" id="managed-projects"></div>
+        </section>
 
       <!-- 독립유공자 분석 탭 -->
       <section

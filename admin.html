@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>VODA 관리자</title>
+
+  <link rel="stylesheet" href="admin.css">
+  <script src="admin.js" defer></script>
+</head>
+
+<body>
+  <header class="admin-header">
+    <a href="index.html" class="admin-logo">
+      <img src="images/logo.png" alt="VODA">
+    </a>
+
+    <span>콘텐츠 관리</span>
+    <a href="index.html" class="site-link">홈페이지 보기 ↗</a>
+  </header>
+
+  <main class="admin-main">
+    <div class="admin-heading">
+      <div>
+        <span class="eyebrow">ADMIN</span>
+        <h1>콘텐츠 관리</h1>
+      </div>
+
+      <p>현재 브라우저에 저장되는 시제품입니다.</p>
+    </div>
+
+    <nav class="admin-tabs" aria-label="관리 메뉴">
+      <button type="button" data-tab="board"
+        class="active" aria-pressed="true">Board</button>
+
+      <button type="button" data-tab="projects"
+        aria-pressed="false">Projects</button>
+
+      <button type="button" data-tab="activities"
+        aria-pressed="false">Activities</button>
+    </nav>
+
+    <div class="admin-layout">
+      <!-- 왼쪽 목록 -->
+      <aside class="admin-list-panel">
+        <div class="panel-heading">
+          <h2 id="list-heading">Board 목록</h2>
+          <button type="button" id="new-button" class="small-button">
+            + 새 항목
+          </button>
+        </div>
+
+        <ul id="admin-list" class="admin-list"></ul>
+      </aside>
+
+      <!-- 오른쪽 편집 -->
+      <section class="admin-editor">
+        <h2 id="editor-heading">새 항목 등록</h2>
+
+        <form id="editor-form">
+          <label class="field">
+            제목
+            <input
+              type="text"
+              name="title"
+              maxlength="120"
+              required
+            >
+          </label>
+
+          <label class="field" id="category-field">
+            분류
+            <select name="category">
+              <option value="notice">공지</option>
+              <option value="activity">활동</option>
+              <option value="recruit">모집</option>
+            </select>
+          </label>
+
+          <label class="field" id="project-category-field" hidden>
+            프로젝트 분류
+            <input type="text" name="projectCategory">
+          </label>
+
+          <label class="field">
+            <span id="body-label">본문</span>
+            <textarea name="body" rows="9" required></textarea>
+          </label>
+
+          <label class="field" id="link-field" hidden>
+            프로젝트 링크
+            <input
+              type="url"
+              name="link"
+              placeholder="https://"
+            >
+          </label>
+
+          <label class="checkbox-field" id="pinned-field">
+            <input type="checkbox" name="pinned">
+            상단 고정 공지로 표시
+          </label>
+
+          <section id="image-field" hidden>
+            <label class="field">
+              <span id="image-label">사진 선택</span>
+              <input
+                type="file"
+                id="image-input"
+                accept="image/jpeg,image/png,image/webp"
+                multiple
+              >
+            </label>
+
+            <p class="image-help" id="image-help"></p>
+
+            <div id="image-preview" class="image-preview"></div>
+          </section>
+
+          <p id="admin-message" class="admin-message" role="status"></p>
+
+          <div class="editor-actions">
+            <button type="button" id="delete-button"
+              class="delete-button" hidden>
+              삭제
+            </button>
+
+            <button type="submit" id="save-button" class="primary-button">
+              등록
+            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
