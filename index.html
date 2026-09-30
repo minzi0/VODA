@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>VODA | 오늘을 분석하고, 내일을 설계하다</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body class="home-page">
+  <header id="site-header" class="site-header"></header>
+
+  <main>
+    <section class="home-hero">
+      <div class="wrap home-hero-inner">
+
+        <div class="home-copy">
+          <p class="home-kicker">
+            <span>VODA</span>
+            <i aria-hidden="true"></i>
+            <span>Value-Oriented<br>Data Analysis</span>
+          </p>
+
+          <h1>
+            오늘을 분석하고,<br>
+            <em>내일을 설계하다</em>
+          </h1>
+
+          <p class="home-description">데이터와 사람을 보다</p>
+
+          <div class="home-actions">
+            <a class="home-primary" href="projects.html">
+              프로젝트 보기 <span>→</span>
+            </a>
+
+            <a class="home-secondary" href="about.html">
+              VODA 소개 <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="home-mascot">
+          <img
+            src="images/home-peek.png"
+            alt="페이지 아래에서 살짝 올라오는 VODA 캐릭터"
+          >
+        </div>
+
+      </div>
+    </section>
+
+    <section class="home-notices" id="home-notices">
+      <div class="wrap home-notice-grid">
+
+        <div class="home-notice-heading">
+          <span>NOTICE</span>
+          <h2>공지사항</h2>
+          <p>
+            VODA의 새로운 소식과<br>
+            다양한 활동들을 확인해보세요.
+          </p>
+        </div>
+
+        <div class="home-notice-content">
+          <div class="home-notice-top">
+
+            <div class="tabs" role="group" aria-label="공지 분류">
+              <button
+                type="button"
+                class="tab active"
+                data-category="all"
+                aria-selected="true"
+              >전체</button>
+
+              <button
+                type="button"
+                class="tab"
+                data-category="notice"
+                aria-selected="false"
+              >공지</button>
+
+              <button
+                type="button"
+                class="tab"
+                data-category="activity"
+                aria-selected="false"
+              >활동</button>
+
+              <button
+                type="button"
+                class="tab"
+                data-category="recruit"
+                aria-selected="false"
+              >모집</button>
+            </div>
+
+            <a class="home-more" href="board.html">더보기 →</a>
+          </div>
+
+          <ul id="home-posts" class="post-list"></ul>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+</body>
+</html>

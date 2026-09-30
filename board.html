@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Board | VODA</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body class="board-page">
+  <header id="site-header" class="site-header"></header>
+
+  <main>
+    <section class="board-banner">
+      <div class="wrap">
+        <h1>Board</h1>
+      </div>
+    </section>
+
+    <div class="wrap board-content">
+
+      <!-- 게시글 목록 화면 -->
+      <section id="voda-board-list">
+
+        <!-- 고정 공지: JS에서 표시 -->
+        <div class="board-pinned" id="voda-board-pinned"></div>
+
+        <div class="board-toolbar">
+          <div class="board-filters" aria-label="게시글 분류">
+            <button type="button" class="active"
+              data-board-category="all" aria-pressed="true">
+              전체
+            </button>
+
+            <button type="button"
+              data-board-category="notice" aria-pressed="false">
+              공지
+            </button>
+
+            <button type="button"
+              data-board-category="activity" aria-pressed="false">
+              활동
+            </button>
+
+            <button type="button"
+              data-board-category="recruit" aria-pressed="false">
+              모집
+            </button>
+          </div>
+
+          <form id="voda-board-search" class="board-search">
+            <input
+              type="search"
+              name="keyword"
+              placeholder="제목 검색"
+              aria-label="게시글 제목 검색"
+            >
+            <button type="submit" class="board-button">검색</button>
+          </form>
+        </div>
+
+        <ul id="voda-board-posts" class="board-posts"></ul>
+
+        <div class="board-bottom">
+          <nav
+            id="voda-board-pagination"
+            class="board-pagination"
+            aria-label="게시글 페이지"
+          ></nav>
+
+          <button
+            type="button"
+            id="voda-board-write"
+            class="board-button"
+          >
+            글쓰기
+          </button>
+        </div>
+      </section>
+
+      <!-- 게시글 상세 화면 -->
+      <section id="voda-board-detail" hidden>
+        <button type="button" id="voda-board-back" class="board-back">
+          ← 목록으로
+        </button>
+
+        <article class="board-detail">
+          <p class="board-detail-meta"></p>
+          <h2></h2>
+          <div class="board-detail-body"></div>
+        </article>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- 글쓰기 창 -->
+  <dialog id="voda-board-dialog" class="board-dialog">
+    <form id="voda-board-form">
+      <div class="board-dialog-heading">
+        <h2>글쓰기</h2>
+        <button
+          type="button"
+          id="voda-board-close"
+          class="board-close"
+          aria-label="글쓰기 창 닫기"
+        >×</button>
+      </div>
+
+      <label class="board-field">
+        분류
+        <select name="category">
+          <option value="notice">공지</option>
+          <option value="activity">활동</option>
+          <option value="recruit">모집</option>
+        </select>
+      </label>
+
+      <label class="board-field">
+        제목
+        <input
+          type="text"
+          name="title"
+          maxlength="120"
+          required
+        >
+      </label>
+
+      <label class="board-field">
+        내용
+        <textarea name="content" rows="8" required></textarea>
+      </label>
+
+      <label class="board-pin-check">
+        <input type="checkbox" name="pinned">
+        상단 고정 공지로 표시
+      </label>
+
+      <p class="board-save-error" id="voda-board-error" role="alert"></p>
+
+      <div class="board-form-actions">
+        <button type="submit" class="board-button">등록</button>
+      </div>
+    </form>
+  </dialog>
+
+  <footer id="site-footer" class="site-footer"></footer>
+</body>
+</html>

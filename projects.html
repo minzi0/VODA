@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Projects | VODA</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body class="projects-page">
+  <header id="site-header" class="site-header"></header>
+
+  <main>
+    <!-- 얇은 상단 배너 -->
+    <section class="projects-banner">
+      <div class="wrap">
+        <h1>Projects</h1>
+      </div>
+    </section>
+
+    <div class="wrap projects-content">
+
+      <!-- 페이지 내부 탭 -->
+      <div class="projects-tabs" aria-label="프로젝트 메뉴">
+        <button
+          type="button"
+          class="projects-tab active"
+          data-project-tab="list"
+        >
+          프로젝트
+        </button>
+
+        <button
+          type="button"
+          class="projects-tab"
+          data-project-tab="analysis"
+        >
+          독립유공자 데이터 분석
+        </button>
+      </div>
+
+      <!-- 프로젝트 목록 -->
+      <section
+        data-project-panel="list"
+        aria-label="프로젝트 목록"
+      >
+        <div class="projects-grid">
+
+          <!-- 첫 번째 프로젝트 -->
+          <article class="project-entry">
+            <div class="project-entry-copy">
+              <span class="project-category">
+                <!-- 실제 분류를 입력하세요. -->
+                분류
+              </span>
+
+              <h2>
+                <!-- 실제 프로젝트 제목을 입력하세요. -->
+                프로젝트 제목
+              </h2>
+
+              <p>
+                <!-- 실제 프로젝트 설명을 입력하세요. -->
+                프로젝트 설명이 들어갈 자리입니다.
+              </p>
+            </div>
+
+            <div class="project-entry-image">
+              <span>이미지가 들어갈 자리</span>
+
+              <!-- 사진을 넣을 때 위 span을 지우고
+                   아래 img의 주석을 해제하세요. -->
+              <!--
+              <img
+                src="images/project-01.png"
+                alt="첫 번째 프로젝트 화면 설명"
+              >
+              -->
+            </div>
+          </article>
+
+          <!-- 두 번째 프로젝트 -->
+          <article class="project-entry">
+            <div class="project-entry-copy">
+              <span class="project-category">
+                <!-- 실제 분류를 입력하세요. -->
+                분류
+              </span>
+
+              <h2>
+                <!-- 실제 프로젝트 제목을 입력하세요. -->
+                프로젝트 제목
+              </h2>
+
+              <p>
+                <!-- 실제 프로젝트 설명을 입력하세요. -->
+                프로젝트 설명이 들어갈 자리입니다.
+              </p>
+            </div>
+
+            <div class="project-entry-image">
+              <span>이미지가 들어갈 자리</span>
+
+              <!--
+              <img
+                src="images/project-02.png"
+                alt="두 번째 프로젝트 화면 설명"
+              >
+              -->
+            </div>
+          </article>
+
+          <!-- 세 번째 프로젝트 -->
+          <article class="project-entry">
+            <div class="project-entry-copy">
+              <span class="project-category">
+                <!-- 실제 분류를 입력하세요. -->
+                분류
+              </span>
+
+              <h2>
+                <!-- 실제 프로젝트 제목을 입력하세요. -->
+                프로젝트 제목
+              </h2>
+
+              <p>
+                <!-- 실제 프로젝트 설명을 입력하세요. -->
+                프로젝트 설명이 들어갈 자리입니다.
+              </p>
+            </div>
+
+            <div class="project-entry-image">
+              <span>이미지가 들어갈 자리</span>
+
+              <!--
+              <img
+                src="images/project-03.png"
+                alt="세 번째 프로젝트 화면 설명"
+              >
+              -->
+            </div>
+          </article>
+
+          <!-- 네 번째 프로젝트 -->
+          <article class="project-entry">
+            <div class="project-entry-copy">
+              <span class="project-category">
+                <!-- 실제 분류를 입력하세요. -->
+                분류
+              </span>
+
+              <h2>
+                <!-- 실제 프로젝트 제목을 입력하세요. -->
+                프로젝트 제목
+              </h2>
+
+              <p>
+                <!-- 실제 프로젝트 설명을 입력하세요. -->
+                프로젝트 설명이 들어갈 자리입니다.
+              </p>
+            </div>
+
+            <div class="project-entry-image">
+              <span>이미지가 들어갈 자리</span>
+
+              <!--
+              <img
+                src="images/project-04.png"
+                alt="네 번째 프로젝트 화면 설명"
+              >
+              -->
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- 독립유공자 분석 탭 -->
+      <section
+        data-project-panel="analysis"
+        aria-label="독립유공자 데이터 분석"
+        hidden
+      >
+        <div class="project-analysis-placeholder">
+          분석 HTML이 들어갈 자리
+        </div>
+
+        <!--
+          분석 파일을 받으면 위 placeholder div를 삭제하고,
+          실제 파일 경로를 지정한 iframe을 넣으세요.
+
+          예시:
+
+          <iframe
+            class="project-analysis-frame"
+            src="analysis/index.html"
+            title="독립유공자 데이터 분석"
+          ></iframe>
+        -->
+      </section>
+
+    </div>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+</body>
+</html>
