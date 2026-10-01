@@ -1022,25 +1022,23 @@ textarea:focus-visible {
    프로젝트 목록과 분석 결과 화면
 ================================================== */
 
-/* 내용이 짧아도 푸터가 화면 맨 아래까지 내려가도록 설정 */
+/* 상단 메뉴·본문·푸터를 배치하고 본문이 남은 높이를 채웁니다. */
 .projects-page,
 .activities-page {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   min-height: 100vh;
   min-height: 100dvh;
 }
 
 .projects-page > main,
 .activities-page > main {
-  flex: 1;
+  min-width: 0;
 }
 
-.projects-page > .site-header,
 .projects-page > .site-footer,
-.activities-page > .site-header,
 .activities-page > .site-footer {
-  flex-shrink: 0;
+  margin: 0;
 }
 
 /* ---------- 내부 화면 선택 버튼 ---------- */
