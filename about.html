@@ -11,28 +11,31 @@
 </head>
 
 <body class="about-page">
+  <!-- 공통 메뉴는 script.js에서 표시합니다. -->
   <header id="site-header" class="site-header"></header>
 
   <main>
-    <!-- 상단 소개 영역 -->
+    <!-- ========================================
+         1. 동아리 소개
+         소개 문구는 이 영역에서 수정합니다.
+         ======================================== -->
     <section class="about-intro" aria-labelledby="about-title">
       <div class="wrap about-intro-grid">
-
         <div class="about-intro-copy">
           <span class="about-kicker">ABOUT VODA</span>
 
-          <h1 id="about-title" class="about-title content-slot">
-            <!-- 이곳에 소개 제목을 입력하세요.
-                 줄바꿈할 위치에 <br>를 넣으면 됩니다. -->
-            소개 제목이 들어갈 자리
+          <h1 id="about-title" class="about-title">
+            데이터와<br>
+            사람을 <em>보다</em>
           </h1>
 
-          <p class="about-description content-slot">
-            <!-- 이곳에 동아리 소개 글을 입력하세요. -->
-            동아리 소개 글이 들어갈 자리
+          <p class="about-description">
+            VODA는 다양한 전공의 대학생이 모여 사회적 가치를
+            창출하는 AI·데이터 분석 대학생 연합 동아리입니다.
           </p>
         </div>
 
+        <!-- 기존 About 이미지를 그대로 사용합니다. -->
         <div class="about-illustration">
           <img
             src="images/about-team.png"
@@ -41,76 +44,216 @@
             height="887"
           >
         </div>
-
       </div>
     </section>
 
-    <!-- 하단 소개 영역 -->
-    <section class="about-details" aria-labelledby="about-section-title">
+    <!-- ========================================
+         2. 핵심 가치
+         항목을 추가할 때는 about-item을 복사합니다.
+         ======================================== -->
+    <section class="about-details" aria-labelledby="about-values-title">
       <div class="wrap about-details-grid">
-
         <div class="about-section-copy">
-          <span class="about-accent" aria-hidden="true"></span>
-
-          <h2 id="about-section-title" class="content-slot">
-            <!-- 이곳에 하단 영역 제목을 입력하세요. -->
-            영역 제목이 들어갈 자리
+          <h2 id="about-values-title">
+            우리가<br>
+            중요하게 생각하는 것
           </h2>
 
-          <p class="content-slot">
-            <!-- 이곳에 하단 영역 설명을 입력하세요. -->
-            영역 설명이 들어갈 자리
-          </p>
+          <span class="about-accent" aria-hidden="true"></span>
         </div>
 
         <ol class="about-items">
           <li class="about-item">
-            <span class="about-item-number" aria-hidden="true">01</span>
+            <span class="about-item-number" aria-hidden="true">1</span>
 
-            <h3 class="content-slot">
-              <!-- 첫 번째 항목 제목 -->
-              항목 제목
-            </h3>
-
-            <p class="content-slot">
-              <!-- 첫 번째 항목 설명 -->
-              항목 설명이 들어갈 자리
-            </p>
+            <div class="about-item-copy">
+              <h3>사회적 가치 창출</h3>
+              <p>
+                AI·데이터 기술로 사회 문제를 살피고,
+                실습과 프로젝트로 해결 방법을 탐색합니다.
+              </p>
+            </div>
           </li>
 
           <li class="about-item">
-            <span class="about-item-number" aria-hidden="true">02</span>
+            <span class="about-item-number" aria-hidden="true">2</span>
 
-            <h3 class="content-slot">
-              <!-- 두 번째 항목 제목 -->
-              항목 제목
-            </h3>
-
-            <p class="content-slot">
-              <!-- 두 번째 항목 설명 -->
-              항목 설명이 들어갈 자리
-            </p>
+            <div class="about-item-copy">
+              <h3>모두를 위한 AI·데이터 분석</h3>
+              <p>
+                기술이 누구에게 도움이 되는지,
+                누구를 놓치고 있는지 함께 고민합니다.
+              </p>
+            </div>
           </li>
 
           <li class="about-item">
-            <span class="about-item-number" aria-hidden="true">03</span>
+            <span class="about-item-number" aria-hidden="true">3</span>
 
-            <h3 class="content-slot">
-              <!-- 세 번째 항목 제목 -->
-              항목 제목
-            </h3>
+            <div class="about-item-copy">
+              <h3>함께하는 운영</h3>
+              <p>
+                함께 결정하고 함께 실천하며,
+                다양한 전공과 경험을 존중합니다.
+              </p>
+            </div>
+          </li>
 
-            <p class="content-slot">
-              <!-- 세 번째 항목 설명 -->
-              항목 설명이 들어갈 자리
-            </p>
+          <li class="about-item">
+            <span class="about-item-number" aria-hidden="true">4</span>
+
+            <div class="about-item-copy">
+              <h3>AI·데이터 윤리</h3>
+              <p>
+                데이터와 기술을 윤리적으로 사용하는 방법을
+                배우고 토론합니다.
+              </p>
+            </div>
           </li>
         </ol>
+      </div>
+    </section>
 
+    <!-- ========================================
+         3. 주요 활동 소개
+         실제 활동 내역은 activities.html에서 확인합니다.
+         ======================================== -->
+    <section class="about-programs" aria-labelledby="about-programs-title">
+      <div class="wrap">
+        <div class="about-programs-heading">
+          <h2 id="about-programs-title">배움에서 현장으로</h2>
+          <span class="about-accent" aria-hidden="true"></span>
+        </div>
+
+        <ul class="about-program-grid">
+          <li class="about-program">
+            <!-- 책 아이콘 -->
+            <svg
+              class="about-program-icon"
+              viewBox="0 0 48 48"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M24 10C18 6 10 6 4 9v30c6-3 14-3 20 1">
+              </path>
+              <path d="M24 10c6-4 14-4 20-1v30c-6-3-14-3-20 1">
+              </path>
+              <path d="M24 10v30"></path>
+            </svg>
+
+            <h3>지부별 스터디</h3>
+            <p>
+              AI·데이터 기술을 배우고
+              사회적 쟁점을 함께 토론합니다.
+            </p>
+          </li>
+
+          <li class="about-program">
+            <!-- 사람들 아이콘 -->
+            <svg
+              class="about-program-icon"
+              viewBox="0 0 48 48"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <circle cx="24" cy="11" r="5"></circle>
+              <circle cx="10" cy="15" r="4"></circle>
+              <circle cx="38" cy="15" r="4"></circle>
+              <path d="M15 40V28a9 9 0 0 1 18 0v12"></path>
+              <path d="M3 40V29a7 7 0 0 1 10-6"></path>
+              <path d="M45 40V29a7 7 0 0 0-10-6"></path>
+            </svg>
+
+            <h3>네트워킹</h3>
+            <p>
+              다른 지부와 만나
+              경험과 생각을 나눕니다.
+            </p>
+          </li>
+
+          <li class="about-program">
+            <!-- 문서 아이콘 -->
+            <svg
+              class="about-program-icon"
+              viewBox="0 0 48 48"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M12 5h17l8 8v30H12z"></path>
+              <path d="M29 5v8h8"></path>
+              <path d="M18 22h13M18 29h13M18 36h10"></path>
+            </svg>
+
+            <h3>공모전 TF</h3>
+            <p>
+              관심 주제로 팀을 구성해
+              공모전 프로젝트를 진행합니다.
+            </p>
+          </li>
+
+          <li class="about-program">
+            <!-- 위치 아이콘 -->
+            <svg
+              class="about-program-icon"
+              viewBox="0 0 48 48"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M24 44S10 27 10 18a14 14 0 0 1 28 0c0 9-14 26-14 26Z"
+              ></path>
+              <circle cx="24" cy="18" r="5"></circle>
+            </svg>
+
+            <h3>핸즈 온 필드</h3>
+            <p>
+              현장을 직접 방문해
+              필요한 기술과 문제를 살펴봅니다.
+            </p>
+          </li>
+        </ul>
+
+        <div class="about-programs-bottom">
+          <a class="about-activities-link" href="activities.html">
+            활동 더 보기 <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         4. 대학문화유니온 소개 문구
+         ======================================== -->
+    <section class="about-union" aria-label="함께하는 연대체">
+      <div class="wrap">
+        <p>
+          VODA는 <strong>대학문화유니온</strong>과 함께합니다.
+        </p>
       </div>
     </section>
   </main>
 
+  <!-- 공통 푸터는 script.js에서 표시합니다. -->
   <footer id="site-footer" class="site-footer"></footer>
 </body>
 </html>

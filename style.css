@@ -27,6 +27,10 @@
 
 html {
   scroll-behavior: smooth;
+
+
+  /* 페이지 길이가 달라도 상단 메뉴의 좌우 위치를 유지합니다. */
+  overflow-y: scroll;
 }
 
 body {
@@ -300,9 +304,6 @@ textarea:focus-visible {
    메인 배너·캐릭터·공지사항
 ================================================== */
 
-.home-page .header-inner {
-  min-height: 82px;
-}
 
 .home-page .nav a.active:not(.apply-nav) {
   color: var(--navy);
@@ -579,28 +580,28 @@ textarea:focus-visible {
   font-size: 12px;
 }
 
-
 /* ==================================================
    04. About
-   상단 소개와 하단 항목 목록
+   동아리 소개·핵심 가치·주요 활동·연대체 안내
 ================================================== */
 
+/* ---------- 동아리 소개 ---------- */
+
 .about-intro {
-  padding: 65px 0;
+  padding: 20px 0;
   background: var(--page-soft);
 }
 
 .about-intro-grid {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
   align-items: center;
-  gap: 35px;
-  min-height: 350px;
+  gap: 45px;
+  min-height: 280px;
 }
 
 .about-intro-copy,
-.about-illustration,
-.about-section-copy {
+.about-illustration {
   min-width: 0;
 }
 
@@ -608,34 +609,36 @@ textarea:focus-visible {
   display: block;
   margin-bottom: 22px;
   color: var(--page-teal);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 750;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
 }
 
 .about-title {
   margin: 0 0 25px;
   color: var(--page-ink);
-  font-size: clamp(34px, 3.8vw, 54px);
+  font-size: clamp(42px, 4.6vw, 64px);
   font-weight: 800;
-  line-height: 1.25;
-  letter-spacing: -0.045em;
-  word-break: keep-all;
-  overflow-wrap: anywhere;
+  line-height: 1.2;
+  letter-spacing: -0.055em;
+}
+
+.about-title em {
+  color: var(--page-teal);
+  font-style: normal;
 }
 
 .about-description {
-  max-width: 500px;
-  min-height: 65px;
+  max-width: 530px;
   margin: 0;
-  color: var(--page-muted);
-  font-size: 18px;
-  line-height: 1.8;
+  color: #435067;
+  font-size: 17px;
+  line-height: 1.85;
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
 
-/* PC에서는 기존처럼 이미지를 크게 표시합니다. */
+/* 기존 About 이미지를 PC에서는 크게 표시합니다. */
 .about-illustration img {
   width: 120%;
   max-width: none;
@@ -643,45 +646,40 @@ textarea:focus-visible {
   margin-left: -10%;
 }
 
+/* ---------- 핵심 가치 ---------- */
+
 .about-details {
-  padding: 75px 0 85px;
+  padding: 65px 0;
 }
 
 .about-details-grid {
   display: grid;
-  grid-template-columns: 0.85fr 1.25fr;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.25fr);
   align-items: start;
   gap: 70px;
+}
+
+.about-section-copy {
+  min-width: 0;
+  padding-top: 18px;
+}
+
+.about-section-copy h2 {
+  margin: 0 0 25px;
+  color: var(--page-ink);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.045em;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 .about-accent {
   display: block;
   width: 44px;
-  height: 4px;
-  margin-bottom: 22px;
-  border-radius: 2px;
+  height: 3px;
   background: var(--page-teal);
-}
-
-.about-section-copy h2 {
-  margin: 0 0 24px;
-  color: var(--page-ink);
-  font-size: clamp(28px, 3vw, 42px);
-  font-weight: 800;
-  line-height: 1.3;
-  letter-spacing: -0.04em;
-  word-break: keep-all;
-  overflow-wrap: anywhere;
-}
-
-.about-section-copy p {
-  min-height: 60px;
-  margin: 0;
-  color: var(--page-muted);
-  font-size: 17px;
-  line-height: 1.8;
-  word-break: keep-all;
-  overflow-wrap: anywhere;
 }
 
 .about-items {
@@ -693,11 +691,11 @@ textarea:focus-visible {
 
 .about-item {
   display: grid;
-  grid-template-columns: 40px 120px minmax(0, 1fr);
+  grid-template-columns: 42px minmax(0, 1fr);
   align-items: start;
-  gap: 20px;
-  padding: 28px 0;
-  border-bottom: 1px solid #e1e5eb;
+  gap: 25px;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--page-line);
 }
 
 .about-item:first-child {
@@ -705,20 +703,30 @@ textarea:focus-visible {
 }
 
 .about-item:last-child {
+  padding-bottom: 0;
   border-bottom: 0;
 }
 
 .about-item-number {
-  padding-top: 3px;
-  color: var(--page-teal);
-  font-size: 21px;
-  font-weight: 800;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #e9f5f4;
+  color: #087f7a;
+  font-size: 19px;
+  font-weight: 750;
+}
+
+.about-item-copy {
+  min-width: 0;
 }
 
 .about-item h3 {
-  margin: 0;
+  margin: 0 0 9px;
   color: var(--page-ink);
-  font-size: 25px;
+  font-size: 21px;
   font-weight: 750;
   line-height: 1.4;
   letter-spacing: -0.03em;
@@ -727,17 +735,121 @@ textarea:focus-visible {
 }
 
 .about-item p {
-  min-height: 55px;
   margin: 0;
-  padding-left: 24px;
-  border-left: 1px solid #e1e5eb;
   color: var(--page-muted);
   font-size: 16px;
-  line-height: 1.75;
+  line-height: 1.8;
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
 
+/* ---------- 주요 활동 ---------- */
+
+.about-programs {
+  padding: 55px 0 40px;
+  background: var(--page-soft);
+}
+
+.about-programs-heading h2 {
+  margin: 0 0 20px;
+  color: var(--page-ink);
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.045em;
+}
+
+.about-program-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 40px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-program {
+  min-width: 0;
+  padding: 0 25px;
+  border-left: 1px solid var(--page-line);
+}
+
+.about-program:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.about-program:last-child {
+  padding-right: 0;
+}
+
+.about-program-icon {
+  display: block;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 19px;
+  color: var(--page-ink);
+}
+
+.about-program h3 {
+  margin: 0 0 10px;
+  color: var(--page-ink);
+  font-size: 20px;
+  font-weight: 750;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+.about-program p {
+  margin: 0;
+  color: #526075;
+  font-size: 15px;
+  line-height: 1.85;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.about-programs-bottom {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.about-activities-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--page-teal);
+  color: var(--page-teal);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.about-activities-link:hover {
+  color: var(--page-teal-hover);
+  border-bottom-color: var(--page-teal-hover);
+}
+
+/* ---------- 연대체 안내 ---------- */
+
+.about-union {
+  padding: 32px 0;
+  background: #fff;
+  text-align: center;
+}
+
+.about-union p {
+  margin: 0;
+  color: var(--page-ink);
+  font-size: 18px;
+  font-weight: 600;
+  word-break: keep-all;
+}
+
+.about-union strong {
+  color: var(--page-teal);
+  font-weight: 750;
+}
 
 /* ==================================================
    05. Activities
@@ -909,6 +1021,23 @@ textarea:focus-visible {
    06. Projects
    프로젝트 목록과 분석 결과 화면
 ================================================== */
+
+/* 내용이 짧아도 푸터 아래에 빈 공간이 남지 않게 합니다. */
+.projects-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.projects-page > main {
+  flex: 1;
+}
+
+.projects-page > .site-header,
+.projects-page > .site-footer {
+  flex-shrink: 0;
+}
 
 .projects-content {
   padding-top: 30px;
@@ -1439,9 +1568,9 @@ a.board-pin:hover {
   }
 
   .home-mascot {
-    right: -45px;
-    bottom: -60px;
-    width: 48%;
+    right: -75px;
+    bottom: -20px;
+    width: 70%;
   }
 }
 
@@ -1652,8 +1781,9 @@ a.board-pin:hover {
   }
 
   .home-mascot {
+    position: absolute;
     right: -28px;
-    bottom: -68px;
+    bottom: 0;
     width: min(88%, 380px);
   }
 
@@ -1703,12 +1833,12 @@ a.board-pin:hover {
   /* ---------- About ---------- */
 
   .about-intro {
-    padding: 42px 0 28px;
+    padding: 40px 0 30px;
   }
 
   .about-intro-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 25px;
     min-height: auto;
   }
 
@@ -1718,7 +1848,8 @@ a.board-pin:hover {
   }
 
   .about-title {
-    font-size: 36px;
+    margin-bottom: 20px;
+    font-size: 42px;
   }
 
   .about-description {
@@ -1731,7 +1862,7 @@ a.board-pin:hover {
     margin: 0 auto;
   }
 
-  /* PC에서 확대한 이미지를 모바일에서는 본문 너비에 맞춥니다. */
+  /* 모바일에서는 이미지가 본문 밖으로 넘치지 않게 합니다. */
   .about-illustration img {
     width: 100%;
     max-width: 100%;
@@ -1739,24 +1870,84 @@ a.board-pin:hover {
   }
 
   .about-details {
-    padding: 45px 0 55px;
+    padding: 40px 0 45px;
   }
 
   .about-details-grid {
     grid-template-columns: 1fr;
-    gap: 35px;
+    gap: 30px;
+  }
+
+  .about-section-copy {
+    padding-top: 0;
   }
 
   .about-section-copy h2 {
+    margin-bottom: 18px;
     font-size: 30px;
   }
 
-  .about-section-copy p {
-    font-size: 16px;
+  .about-item {
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 15px;
+    padding: 22px 0;
+  }
+
+  .about-item-number {
+    width: 36px;
+    height: 36px;
+    font-size: 17px;
   }
 
   .about-item h3 {
-    font-size: 23px;
+    font-size: 19px;
+  }
+
+  .about-item p {
+    font-size: 15px;
+  }
+
+  .about-programs {
+    padding: 40px 0 30px;
+  }
+
+  .about-programs-heading h2 {
+    font-size: 30px;
+  }
+
+  .about-program-grid {
+    margin-top: 30px;
+    gap: 28px 0;
+  }
+
+  .about-program {
+    padding: 0 15px;
+  }
+
+  .about-program-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 15px;
+  }
+
+  .about-program h3 {
+    font-size: 18px;
+  }
+
+  .about-program p {
+    font-size: 14px;
+  }
+
+  .about-programs-bottom {
+    margin-top: 25px;
+  }
+
+  .about-union {
+    padding: 25px 0;
+  }
+
+  .about-union p {
+    font-size: 16px;
   }
 
   /* ---------- Activities ---------- */
