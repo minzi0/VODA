@@ -302,7 +302,13 @@
 
     for (const item of items) {
       const li = document.createElement("li");
-      const button = makeElement("button", "", item.title);
+      
+      // 고정 게시글 표시
+      const title = currentTab === "board" && item.pinned
+       ? `[고정] ${item.title}`
+        : item.title;
+
+      const button = makeElement("button", "", title);
 
       button.type = "button";
       button.classList.toggle("active", item.id === selectedId);

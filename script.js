@@ -328,48 +328,30 @@
       return url.href;
     }
 
-    /* 고정 공지: 최신 등록 순서로 두 개 표시 */
+    /* 고정 공지가 있을 때만 최신 두 개까지 표시합니다. */
     function renderPinned() {
       pinnedArea.replaceChildren();
 
-      const pinnedPosts = posts
-        .filter(post => post.pinned)
-        .slice(0, 2);
+    const pinnedPosts = posts
+      .filter(post => post.pinned)
+      .slice(0, 2);
 
-      for (let index = 0; index < 2; index++) {
-        const post = pinnedPosts[index];
+    // 고정 공지가 없으면 영역 전체를 숨깁니다.
+    pinnedArea.hidden = pinnedPosts.length === 0;
 
-        if (!post) {
-          const placeholder = createElement(
-            "div",
-            "board-pin board-pin-placeholder"
-          );
+    for (const post of pinnedPosts) {
+      const link = createElement("a", "board-pin");
+      link.href = detailURL(post.id);
 
-          placeholder.append(
-            createElement("span", "board-pin-label", "고정 공지"),
-            createElement(
-              "span",
-              "board-pin-title",
-              "고정 공지가 들어갈 자리"
-            )
-          );
+      link.append(
+        createElement("span", "board-pin-label", "고정 공지"),
+        createElement("span", "board-pin-title", post.title),
+        createElement("span", "board-pin-date", post.date)
+      );
 
-          pinnedArea.append(placeholder);
-          continue;
-        }
-
-        const link = createElement("a", "board-pin");
-        link.href = detailURL(post.id);
-
-        link.append(
-          createElement("span", "board-pin-label", "고정 공지"),
-          createElement("span", "board-pin-title", post.title),
-          createElement("span", "board-pin-date", post.date)
-        );
-
-        pinnedArea.append(link);
-      }
+      pinnedArea.append(link);
     }
+  }
 
     /* 분류·검색 결과와 페이지 버튼 표시 */
     function renderList() {
